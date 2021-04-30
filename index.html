@@ -111,6 +111,21 @@
       {Id_tran: 9, Id_kar: 8, Jml_Lembur: 3, Total_Lembur: 0, Total_Salary: 0},
       {Id_tran: 10, Id_kar: 7, Jml_Lembur: 7, Total_Lembur: 0, Total_Salary: 0},
     ]
+    Number.prototype.formatMataUang = function(){
+      let value = this.toString().split('').reverse().join('')
+      let returnValue = ''
+      for(let i = 0; i < value.length; i++ ){
+        if((i+1)%3 == 0){
+          if(i==value.length-1) returnValue+=value[i]
+          else returnValue+=value[i]+'.'
+        }else{
+          returnValue+=value[i]
+        }
+      }
+      returnValue = returnValue.split('').reverse().join('')
+      return 'Rp '+returnValue+',00,-'
+    }
+
     function refresh(){
       let html_table_karyawan = ''
       let html_table_salary = ''
@@ -133,8 +148,8 @@
         html_table_salary +=`
         <tr>
           <td>${row.Id_salary}</td>
-          <td>${row.Jml_salary}</td>
-          <td>${row.Tunjangan}</td>
+          <td>${row.Jml_salary.formatMataUang()}</td>
+          <td>${row.Tunjangan.formatMataUang()}</td>
           <td>${row.Id_gol}</td>
         </tr>
         `
@@ -153,14 +168,14 @@
         })
         row.Total_Lembur = row.Jml_Lembur * 35000
         row.Total_Salary = dsalary.Jml_salary + dsalary.Tunjangan + row.Total_Lembur
-        
+
         html_table_transaksi_salary += `
         <tr>
           <td>${row.Id_tran}</td>
           <td>${row.Id_kar}</td>
           <td>${row.Jml_Lembur}</td>
-          <td>${row.Total_Lembur}</td>
-          <td>${row.Total_Salary}</td>
+          <td>${row.Total_Lembur.formatMataUang()}</td>
+          <td>${row.Total_Salary.formatMataUang()}</td>
         </tr>
         `
       })
