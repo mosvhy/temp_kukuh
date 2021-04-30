@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test Programmer</title>
+</head>
+<body>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="card col-xs-12">
+        <div class="card-heading">
+          <h5 class="card-title">Karyawan</h5>
+        </div>
+        <div class="card-body">
+          <table class="table table-responsive table-bordered" id="tbl_karyawan">
+            <thead>
+              <th>Id_kar</th>
+              <th>Nama</th>
+              <th>Alamat</th>
+              <th>Status</th>
+              <th>Tgl_masuk</th>
+              <th>Masa_kontrak</th>
+              <th>Jabatan</th>
+              <th>Grade</th>
+            </thead>
+            <tbody></tbody>
+          </table>
+          <a href="#" class="btn btn-primary">Refresh</a>
+        </div>
+      </div>
+
+      <div class="card col-xs-12">
+        <div class="card-heading">
+          <h5 class="card-title">Salary</h5>
+        </div>
+        <div class="card-body">
+          <table class="table table-responsive table-bordered" id="tbl_salary">
+            <thead>
+              <th>Id_salary</th>
+              <th>Jml_salary</th>
+              <th>Tunjangan</th>
+              <th>Id_gol</th>
+            </thead>
+            <tbody></tbody>
+          </table>
+          <a href="#" class="btn btn-primary">Refresh</a>
+        </div>
+      </div>
+
+      <div class="card col-xs-12">
+        <div class="card-heading">
+          <h5 class="card-title">Transaksi Salary</h5>
+        </div>
+        <div class="card-body">
+          <table class="table table-responsive table-bordered" id="tbl_transaksi_salary">
+            <thead>
+              <th>Id_tran</th>
+              <th>Id_kar</th>
+              <th>Jml_Lembur</th>
+              <th>Total_Lembur</th>
+              <th>Total_Salary</th>
+            </thead>
+            <tbody></tbody>
+          </table>
+          <a href="#" class="btn btn-primary">Refresh</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    let dataKaryawan = [
+      {Nama:'Bayu',Alamat:'Lampung',Status:'Tetap',:Tgl_masuk:'2020-01-12',Masa_kontrak:null,Jabatan:'Tech. Support',Grade:'3B'},
+      {Nama:'Budi',Alamat:'Jakarta',Status:'Kontrak',:Tgl_masuk:'2020-01-12',Masa_kontrak:null,Jabatan:'Tech. Support',Grade:'3B'},
+      {Nama:'Andi',Alamat:'Yogyakarta',Status:'Kontrak',:Tgl_masuk:'2020-01-12',Masa_kontrak:null,Jabatan:'Tech. Support',Grade:'3B'},
+      {Nama:'Yuyu',Alamat:'Bandung',Status:'Kontrak',:Tgl_masuk:'2020-01-12',Masa_kontrak:null,Jabatan:'Tech. Support',Grade:'3B'},
+      {Nama:'Mijan',Alamat:'Tegal',Status:'Tetap',:Tgl_masuk:'2020-01-12',Masa_kontrak:null,Jabatan:'Tech. Support',Grade:'3B'},
+      {Nama:'Sukija',Alamat:'Tegal',Status:'Kontrak',:Tgl_masuk:'2020-01-12',Masa_kontrak:null,Jabatan:'Tech. Support',Grade:'3B'},
+      {Nama:'Lia',Alamat:'Palembang',Status:'Kontrak',:Tgl_masuk:'2020-01-12',Masa_kontrak:null,Jabatan:'Tech. Support',Grade:'3B'},
+      {Nama:'Okti',Alamat:'Padang',Status:'Tetap',:Tgl_masuk:'2020-01-12',Masa_kontrak:null,Jabatan:'Tech. Support',Grade:'3B'},
+      {Nama:'Ika',Alamat:'Padang',Status:'Kontrak',:Tgl_masuk:'2020-01-12',Masa_kontrak:null,Jabatan:'Tech. Support',Grade:'3B'},
+      {Nama:'Siman',Alamat:'Tegal',Status:'Kontrak',:Tgl_masuk:'2020-01-12',Masa_kontrak:null,Jabatan:'Tech. Support',Grade:'3B'},
+    ]
+    let dataSalary = [
+      {Id_salary:1, Jml_salary: 4200000, Tunjangan: 300000, Id_gol: '3A'},
+      {Id_salary:2, Jml_salary: 4000000, Tunjangan: 200000, Id_gol: '3B'},
+      {Id_salary:3, Jml_salary: 5500000, Tunjangan: 700000, Id_gol: '4A'},
+      {Id_salary:4, Jml_salary: 3800000, Tunjangan: 100000, Id_gol: '2A'},
+    ]
+  })
+</script>
+</body>
+</html>
