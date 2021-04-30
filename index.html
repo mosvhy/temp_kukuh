@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
   <title>Test Programmer</title>
 </head>
 <body>
@@ -14,7 +15,7 @@
             <h5 class="card-title">Karyawan</h5>
           </div>
           <div class="card-body">
-            <table class="table table-responsive table-bordered" id="tbl_karyawan">
+            <table class="table table-responsive table-bordered" id="table_karyawan">
               <thead>
                 <th>Id_kar</th>
                 <th>Nama</th>
@@ -27,7 +28,7 @@
               </thead>
               <tbody></tbody>
             </table>
-            <a href="#" class="btn btn-primary">Refresh</a>
+            <a href="#" class="btn btn-primary btn-refresh">Refresh</a>
           </div>
         </div>
       </div>
@@ -38,7 +39,7 @@
             <h5 class="card-title">Salary</h5>
           </div>
           <div class="card-body">
-            <table class="table table-responsive table-bordered" id="tbl_salary">
+            <table class="table table-responsive table-bordered" id="table_salary">
               <thead>
                 <th>Id_salary</th>
                 <th>Jml_salary</th>
@@ -47,7 +48,7 @@
               </thead>
               <tbody></tbody>
             </table>
-            <a href="#" class="btn btn-primary">Refresh</a>
+            <a href="#" class="btn btn-primary btn-refresh">Refresh</a>
           </div>
         </div>
       </div>
@@ -58,7 +59,7 @@
             <h5 class="card-title">Transaksi Salary</h5>
           </div>
           <div class="card-body">
-            <table class="table table-responsive table-bordered" id="tbl_transaksi_salary">
+            <table class="table table-responsive table-bordered" id="table_transaksi_salary">
               <thead>
                 <th>Id_tran</th>
                 <th>Id_kar</th>
@@ -68,7 +69,7 @@
               </thead>
               <tbody></tbody>
             </table>
-            <a href="#" class="btn btn-primary">Refresh</a>
+            <a href="#" class="btn btn-primary btn-refresh">Refresh</a>
           </div>
         </div>
       </div>
@@ -81,16 +82,16 @@
 <script type="text/javascript">
   $(document).ready(function(){
     let dataKaryawan = [
-      {Nama:'Bayu',Alamat:'Lampung',Status:'Tetap',:Tgl_masuk:'2020-01-12',Masa_kontrak:null,Jabatan:'Tech. Support',Grade:'3B'},
-      {Nama:'Budi',Alamat:'Jakarta',Status:'Kontrak',:Tgl_masuk:'2020-01-12',Masa_kontrak:null,Jabatan:'Tech. Support',Grade:'3B'},
-      {Nama:'Andi',Alamat:'Yogyakarta',Status:'Kontrak',:Tgl_masuk:'2020-01-12',Masa_kontrak:null,Jabatan:'Tech. Support',Grade:'3B'},
-      {Nama:'Yuyu',Alamat:'Bandung',Status:'Kontrak',:Tgl_masuk:'2020-01-12',Masa_kontrak:null,Jabatan:'Tech. Support',Grade:'3B'},
-      {Nama:'Mijan',Alamat:'Tegal',Status:'Tetap',:Tgl_masuk:'2020-01-12',Masa_kontrak:null,Jabatan:'Tech. Support',Grade:'3B'},
-      {Nama:'Sukija',Alamat:'Tegal',Status:'Kontrak',:Tgl_masuk:'2020-01-12',Masa_kontrak:null,Jabatan:'Tech. Support',Grade:'3B'},
-      {Nama:'Lia',Alamat:'Palembang',Status:'Kontrak',:Tgl_masuk:'2020-01-12',Masa_kontrak:null,Jabatan:'Tech. Support',Grade:'3B'},
-      {Nama:'Okti',Alamat:'Padang',Status:'Tetap',:Tgl_masuk:'2020-01-12',Masa_kontrak:null,Jabatan:'Tech. Support',Grade:'3B'},
-      {Nama:'Ika',Alamat:'Padang',Status:'Kontrak',:Tgl_masuk:'2020-01-12',Masa_kontrak:null,Jabatan:'Tech. Support',Grade:'3B'},
-      {Nama:'Siman',Alamat:'Tegal',Status:'Kontrak',:Tgl_masuk:'2020-01-12',Masa_kontrak:null,Jabatan:'Tech. Support',Grade:'3B'},
+      {Id_kar:1,Nama:'Bayu',Alamat:'Lampung',Status:'Tetap', Tgl_masuk:'2020-01-12',Masa_kontrak:'NULL',Jabatan:'Tech. Support',Grade:'3B'},
+      {Id_kar:2,Nama:'Budi',Alamat:'Jakarta',Status:'Kontrak', Tgl_masuk:'2020-05-24',Masa_kontrak:'1 Tahun',Jabatan:'Spv. IT',Grade:'4A'},
+      {Id_kar:3,Nama:'Andi',Alamat:'Yogyakarta',Status:'Kontrak', Tgl_masuk:'2020-01-12',Masa_kontrak:'6 bulan',Jabatan:'Programmer',Grade:'3A'},
+      {Id_kar:4,Nama:'Yuyu',Alamat:'Bandung',Status:'Kontrak', Tgl_masuk:'2020-07-15',Masa_kontrak:'1 Tahun',Jabatan:'Operator',Grade:'2A'},
+      {Id_kar:5,Nama:'Mijan',Alamat:'Tegal',Status:'Tetap', Tgl_masuk:'2021-01-04',Masa_kontrak:'NULL',Jabatan:'Operator',Grade:'2A'},
+      {Id_kar:6,Nama:'Sukija',Alamat:'Tegal',Status:'Kontrak', Tgl_masuk:'2020-04-30',Masa_kontrak:'1 Tahun',Jabatan:'Operator',Grade:'2A'},
+      {Id_kar:7,Nama:'Lia',Alamat:'Palembang',Status:'Kontrak', Tgl_masuk:'2020-05-12',Masa_kontrak:'1 Tahun',Jabatan:'Staff MR.',Grade:'3A'},
+      {Id_kar:8,Nama:'Okti',Alamat:'Padang',Status:'Tetap', Tgl_masuk:'2020-01-12',Masa_kontrak:'NULL',Jabatan:'Tech. Support',Grade:'3B'},
+      {Id_kar:9,Nama:'Ika',Alamat:'Padang',Status:'Kontrak', Tgl_masuk:'2020-05-28',Masa_kontrak:'1 Tahun',Jabatan:'Staff Payroll',Grade:'3A'},
+      {Id_kar:10,Nama:'Siman',Alamat:'Tegal',Status:'Kontrak', Tgl_masuk:'2020-06-12',Masa_kontrak:'1 Tahun',Jabatan:'Programmer',Grade:'3A'},
     ]
     let dataSalary = [
       {Id_salary:1, Jml_salary: 4200000, Tunjangan: 300000, Id_gol: '3A'},
@@ -98,6 +99,78 @@
       {Id_salary:3, Jml_salary: 5500000, Tunjangan: 700000, Id_gol: '4A'},
       {Id_salary:4, Jml_salary: 3800000, Tunjangan: 100000, Id_gol: '2A'},
     ]
+    let dataTransaksi = [
+      {Id_tran: 1, Id_kar: 2, Jml_Lembur: 0, Total_Lembur: 0, Total_Salary: 0},
+      {Id_tran: 2, Id_kar: 3, Jml_Lembur: 6, Total_Lembur: 0, Total_Salary: 0},
+      {Id_tran: 3, Id_kar: 1, Jml_Lembur: 2, Total_Lembur: 0, Total_Salary: 0},
+      {Id_tran: 4, Id_kar: 6, Jml_Lembur: 0, Total_Lembur: 0, Total_Salary: 0},
+      {Id_tran: 5, Id_kar: 5, Jml_Lembur: 4, Total_Lembur: 0, Total_Salary: 0},
+      {Id_tran: 6, Id_kar: 4, Jml_Lembur: 0, Total_Lembur: 0, Total_Salary: 0},
+      {Id_tran: 7, Id_kar: 10, Jml_Lembur: 3, Total_Lembur: 0, Total_Salary: 0},
+      {Id_tran: 8, Id_kar: 9, Jml_Lembur: 6, Total_Lembur: 0, Total_Salary: 0},
+      {Id_tran: 9, Id_kar: 8, Jml_Lembur: 3, Total_Lembur: 0, Total_Salary: 0},
+      {Id_tran: 10, Id_kar: 7, Jml_Lembur: 7, Total_Lembur: 0, Total_Salary: 0},
+    ]
+    function refresh(){
+      let html_table_karyawan = ''
+      let html_table_salary = ''
+      let html_table_transaksi_salary = ''
+      dataKaryawan.map((row, index) => {
+        html_table_karyawan += `
+          <tr>
+            <td>${row.Id_kar}</td>
+            <td>${row.Nama}</td>
+            <td>${row.Alamat}</td>
+            <td>${row.Status}</td>
+            <td>${row.Tgl_masuk}</td>
+            <td>${row.Masa_kontrak}</td>
+            <td>${row.Jabatan}</td>
+            <td>${row.Grade}</td>
+          </tr>
+        `
+      })
+      dataSalary.map((row, index) => {
+        html_table_salary +=`
+        <tr>
+          <td>${row.Id_salary}</td>
+          <td>${row.Jml_salary}</td>
+          <td>${row.Tunjangan}</td>
+          <td>${row.Id_gol}</td>
+        </tr>
+        `
+      })
+      dataTransaksi.map((row, index) => {
+        let dkaryawan, dsalary
+        dataKaryawan.map((karyawan) => {
+          if(karyawan.Id_kar == row.Id_kar){
+            dkaryawan = karyawan
+          }
+        })
+        dataSalary.map((salary) => {
+          if(salary.Id_gol == dkaryawan.Grade){
+            dsalary = salary
+          }
+        })
+        row.Total_Lembur = row.Jml_Lembur * 35000
+        row.Total_Salary = dsalary.Jml_salary + dsalary.Tunjangan + row.Total_Lembur
+        
+        html_table_transaksi_salary += `
+        <tr>
+          <td>${row.Id_tran}</td>
+          <td>${row.Id_kar}</td>
+          <td>${row.Jml_Lembur}</td>
+          <td>${row.Total_Lembur}</td>
+          <td>${row.Total_Salary}</td>
+        </tr>
+        `
+      })
+      $('#table_karyawan tbody').html(html_table_karyawan)
+      $('#table_salary tbody').html(html_table_salary)
+      $('#table_transaksi_salary tbody').html(html_table_transaksi_salary)
+    }
+
+    $('.btn-refresh').on('click',refresh)
+    refresh()
   })
 </script>
 </body>
