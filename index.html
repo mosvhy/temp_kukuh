@@ -184,8 +184,26 @@
       $('#table_transaksi_salary tbody').html(html_table_transaksi_salary)
     }
 
-    $('.btn-refresh').on('click',refresh)
-    refresh()
+    // $('.btn-refresh').on('click',refresh)
+    // refresh()
+    function refreshGet(){
+      $.ajax({
+        url:'http://localhost/temp_kukuh/get_data.php',
+        method:'GET',
+        dataType:'JSON',
+        success:function(r){
+          if(r.code){
+            dataKaryawan = r.data.dataKaryawan;
+            dataSalary = r.data.dataSalary;
+            dataTransaksi = r.data.dataTransaksi;
+          }else{
+            alert(r.message || "Error")
+          }
+        }
+      })
+    }
+    $('.btn-refresh').on('click',refreshGet)
+    refreshGet()
   })
 </script>
 </body>
