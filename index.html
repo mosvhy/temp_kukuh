@@ -5,65 +5,71 @@
 </head>
 <body>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <div class="container-fluid">
+  <div class="container">
     <div class="row">
 
-      <div class="card col-xs-12">
-        <div class="card-heading">
-          <h5 class="card-title">Karyawan</h5>
-        </div>
-        <div class="card-body">
-          <table class="table table-responsive table-bordered" id="tbl_karyawan">
-            <thead>
-              <th>Id_kar</th>
-              <th>Nama</th>
-              <th>Alamat</th>
-              <th>Status</th>
-              <th>Tgl_masuk</th>
-              <th>Masa_kontrak</th>
-              <th>Jabatan</th>
-              <th>Grade</th>
-            </thead>
-            <tbody></tbody>
-          </table>
-          <a href="#" class="btn btn-primary">Refresh</a>
-        </div>
-      </div>
-
-      <div class="card col-xs-12">
-        <div class="card-heading">
-          <h5 class="card-title">Salary</h5>
-        </div>
-        <div class="card-body">
-          <table class="table table-responsive table-bordered" id="tbl_salary">
-            <thead>
-              <th>Id_salary</th>
-              <th>Jml_salary</th>
-              <th>Tunjangan</th>
-              <th>Id_gol</th>
-            </thead>
-            <tbody></tbody>
-          </table>
-          <a href="#" class="btn btn-primary">Refresh</a>
+      <div class="col-xs-12">
+        <div class="card">
+          <div class="card-heading pl-2 pr-2 pt-2">
+            <h5 class="card-title">Karyawan</h5>
+          </div>
+          <div class="card-body">
+            <table class="table table-responsive table-bordered" id="tbl_karyawan">
+              <thead>
+                <th>Id_kar</th>
+                <th>Nama</th>
+                <th>Alamat</th>
+                <th>Status</th>
+                <th>Tgl_masuk</th>
+                <th>Masa_kontrak</th>
+                <th>Jabatan</th>
+                <th>Grade</th>
+              </thead>
+              <tbody></tbody>
+            </table>
+            <a href="#" class="btn btn-primary">Refresh</a>
+          </div>
         </div>
       </div>
 
-      <div class="card col-xs-12">
-        <div class="card-heading">
-          <h5 class="card-title">Transaksi Salary</h5>
+      <div class="col-xs-12">
+        <div class="card">
+          <div class="card-heading pl-2 pr-2 pt-2">
+            <h5 class="card-title">Salary</h5>
+          </div>
+          <div class="card-body">
+            <table class="table table-responsive table-bordered" id="tbl_salary">
+              <thead>
+                <th>Id_salary</th>
+                <th>Jml_salary</th>
+                <th>Tunjangan</th>
+                <th>Id_gol</th>
+              </thead>
+              <tbody></tbody>
+            </table>
+            <a href="#" class="btn btn-primary">Refresh</a>
+          </div>
         </div>
-        <div class="card-body">
-          <table class="table table-responsive table-bordered" id="tbl_transaksi_salary">
-            <thead>
-              <th>Id_tran</th>
-              <th>Id_kar</th>
-              <th>Jml_Lembur</th>
-              <th>Total_Lembur</th>
-              <th>Total_Salary</th>
-            </thead>
-            <tbody></tbody>
-          </table>
-          <a href="#" class="btn btn-primary">Refresh</a>
+      </div>
+
+      <div class="col-xs-12">
+        <div class="card">
+          <div class="card-heading pl-2 pr-2 pt-2">
+            <h5 class="card-title">Transaksi Salary</h5>
+          </div>
+          <div class="card-body">
+            <table class="table table-responsive table-bordered" id="tbl_transaksi_salary">
+              <thead>
+                <th>Id_tran</th>
+                <th>Id_kar</th>
+                <th>Jml_Lembur</th>
+                <th>Total_Lembur</th>
+                <th>Total_Salary</th>
+              </thead>
+              <tbody></tbody>
+            </table>
+            <a href="#" class="btn btn-primary">Refresh</a>
+          </div>
         </div>
       </div>
     </div>
